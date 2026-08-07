@@ -28,6 +28,6 @@ RUN pnpm --filter @skill-platform/server build
 
 WORKDIR /app/apps/server
 
-EXPOSE 3000
+EXPOSE 3456
 
 CMD ["sh", "-c", "pnpm db:migrate && pnpm start"]
