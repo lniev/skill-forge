@@ -2,7 +2,7 @@
 FROM node:20-slim AS builder
 
 # Use a faster Debian mirror (override via --build-arg APT_MIRROR=...)
-ARG APT_MIRROR=https://mirrors.tuna.tsinghua.edu.cn
+ARG APT_MIRROR=http://mirrors.tuna.tsinghua.edu.cn
 RUN sed -i "s|http://deb.debian.org|${APT_MIRROR}|g" /etc/apt/sources.list.d/debian.sources /etc/apt/sources.list 2>/dev/null || true && \
     apt-get update && apt-get install -y \
     python3 \
