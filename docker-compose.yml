@@ -12,5 +12,24 @@ services:
     volumes:
       - minio_data:/data
 
+  server:
+    build:
+      context: .
+      dockerfile: apps/server/Dockerfile
+    container_name: skill-platform-server
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - DATABASE_URL=/data/skill-platform.sqlite
+      - STORAGE_TYPE=local
+      - STORAGE_DIR=/data/storage
+    volumes:
+      - server_data:/data
+    restart: unless-stopped
+    depends_on:
+      - minio
+
 volumes:
   minio_data:
+  server_data:
