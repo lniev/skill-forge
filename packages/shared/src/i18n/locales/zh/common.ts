@@ -141,7 +141,7 @@ export const common = {
     title: "服务设置",
     description: "设置后端接口的 host 地址",
     saved: "服务地址保存成功",
-    hostPlaceholder: "http://localhost:3000/api",
+    hostPlaceholder: "http://localhost:3456/api",
     serverUrlLabel: "服务地址",
     openSettings: "服务设置",
   },

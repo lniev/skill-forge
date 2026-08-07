@@ -37,7 +37,7 @@ cp .env.example .env
 默认 `.env`：
 
 ```bash
-PORT=3000
+PORT=3456
 DATABASE_URL=./data/skill-platform.sqlite
 STORAGE_TYPE=local
 STORAGE_DIR=./data/storage
@@ -47,7 +47,7 @@ STORAGE_DIR=./data/storage
 
 | 命令 | 说明 |
 |---|---|
-| `pnpm dev` | 启动开发服务（默认端口 3000） |
+| `pnpm dev` | 启动开发服务（默认端口 3456） |
 | `pnpm build` | 构建 |
 | `pnpm start` | 启动生产服务 |
 | `pnpm typecheck` | TypeScript 类型检查 |
@@ -57,7 +57,7 @@ STORAGE_DIR=./data/storage
 
 | 变量 | 必填 | 默认值 | 说明 |
 |---|---|---|---|
-| `PORT` | 否 | `3000` | 服务端口号 |
+| `PORT` | 否 | `3456` | 服务端口号 |
 | `DATABASE_URL` | 否 | `./data/skill-platform.sqlite` | SQLite 数据库文件路径 |
 | `STORAGE_TYPE` | 否 | `local` | 存储模式：`local` 或 `s3` |
 | `STORAGE_DIR` | 否 | `./data/storage` | 本地存储目录 |
@@ -147,7 +147,7 @@ src/routes/
 开发环境默认允许以下来源访问：
 
 - `http://localhost:1420`
-- `http://localhost:3000`
+- `http://localhost:3456`
 - `http://127.0.0.1:1420`
 
 ## 接口路由前缀

@@ -18,9 +18,9 @@ services:
       dockerfile: apps/server/Dockerfile
     container_name: skill-platform-server
     ports:
-      - "3000:3000"
+      - "3456:3456"
     environment:
-      - PORT=3000
+      - PORT=3456
       - DATABASE_URL=/data/skill-platform.sqlite
       - STORAGE_TYPE=local
       - STORAGE_DIR=/data/storage

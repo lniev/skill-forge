@@ -4,7 +4,7 @@ import { useAuthStore } from "../store/authStore"
 import { useSettingsStore } from "../store/settingsStore"
 import { getRefreshToken, refreshAccessToken } from "./auth"
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:3000/api"
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:3456/api"
 
 function getEffectiveApiBaseUrl(): string {
   return useSettingsStore.getState().serverUrl || API_BASE_URL

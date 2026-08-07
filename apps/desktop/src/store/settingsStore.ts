@@ -25,7 +25,7 @@ async function getStore() {
   return store
 }
 
-const DEFAULT_SERVER_URL = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:3000/api"
+const DEFAULT_SERVER_URL = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:3456/api"
 
 export const useSettingsStore = create<SettingsState>((set) => ({
   aiApiUrl: import.meta.env.VITE_AI_API_URL ?? "",

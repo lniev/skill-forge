@@ -141,7 +141,7 @@ export const common = {
     title: "Server Settings",
     description: "Set the backend API host address",
     saved: "Server address saved",
-    hostPlaceholder: "http://localhost:3000/api",
+    hostPlaceholder: "http://localhost:3456/api",
     serverUrlLabel: "Server URL",
     openSettings: "Server Settings",
   },

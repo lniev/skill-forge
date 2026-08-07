@@ -28,7 +28,7 @@ const app = new Hono().basePath("/api")
 
 app.use(
   cors({
-    origin: ["http://localhost:1420", "http://localhost:3000", "http://127.0.0.1:1420"],
+    origin: ["http://localhost:1420", "http://localhost:3456", "http://127.0.0.1:1420"],
     allowMethods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowHeaders: ["Content-Type", "Authorization"],
     credentials: true,
@@ -53,7 +53,7 @@ app.route("/skills", createAssetRoutes(skillsRepo, versionsRepo, storage))
 app.route("/installs", createInstallRoutes(installsRepo, versionsRepo))
 app.route("/skills", createInvokeRoutes(skillsRepo, versionsRepo, installsRepo))
 
-const port = Number(process.env.PORT) || 3000
+const port = Number(process.env.PORT) || 3456
 
 serve({
   fetch: app.fetch,

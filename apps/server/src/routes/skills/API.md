@@ -226,7 +226,7 @@ Content-Type: multipart/form-data
 ### 请求示例
 
 ```bash
-curl -X POST http://localhost:3000/api/skills/create-with-version \
+curl -X POST http://localhost:3456/api/skills/create-with-version \
   -F 'data={"skill":{"skillId":"email-classifier","name":"邮件意图分类","runtimeType":"llm_prompt","visibility":"public"},"version":{"version":"1.0.0","runtimeConfig":{"model":"gpt-4o","temperature":0.2}}}' \
   -F 'file=@prompt.txt' \
   -F 'file=@icon.png'
