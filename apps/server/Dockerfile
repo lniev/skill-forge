@@ -1,8 +1,10 @@
 # Build stage: compile native modules and build the server
 FROM node:20-slim AS builder
 
-# Install build tools for native modules (bcrypt / better-sqlite3)
-RUN apt-get update && apt-get install -y \
+# Use a faster Debian mirror (override via --build-arg APT_MIRROR=...)
+ARG APT_MIRROR=https://mirrors.tuna.tsinghua.edu.cn
+RUN sed -i "s|http://deb.debian.org|${APT_MIRROR}|g" /etc/apt/sources.list.d/debian.sources /etc/apt/sources.list 2>/dev/null || true && \
+    apt-get update && apt-get install -y \
     python3 \
     make \
     g++ \
