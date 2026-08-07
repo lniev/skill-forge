@@ -1,13 +1,13 @@
-<div align="right">中文 | <a href="./README.en.md">English</a></div>
+<div align="right"><a href="./README.md">中文</a> | English</div>
 
 # <img src="./apps/desktop/src-tauri/icons/icon.png" alt="SkillForge" width="32" /> SkillForge
 
 <p align="center">
-  <strong>企业私有化 AI 技能管理平台</strong>
+  <strong>Enterprise Private AI Skill Management Platform</strong>
 </p>
 
 <p align="center">
-  部署属于你自己的团队/公司技能市场，统一管理、分发和安装 AI 技能到 Claude Code、Codex、Cursor、Gemini CLI 等主流平台。
+  Deploy your own team/company skill marketplace to centrally manage, distribute, and install AI skills across Claude Code, Codex, Cursor, Gemini CLI, and other mainstream platforms.
 </p>
 
 <p align="center">
@@ -45,73 +45,73 @@
 
 ---
 
-## 📌 项目定位
+## 📌 Project Positioning
 
-**SkillForge** 是一个面向企业的**私有化 AI 技能管理平台**（Private AI Skill Marketplace）。
+**SkillForge** is an enterprise-oriented **private AI skill management platform** (Private AI Skill Marketplace).
 
-随着 Claude Code、Codex、Cursor 等 AI 编程助手成为开发工作流的核心，团队累了大量 Prompt 模板、工作流脚本和领域知识——但这些技能分散在文档、代码或个人笔记中，难以复用和版本管理。
+As AI coding assistants such as Claude Code, Codex, and Cursor become central to development workflows, teams accumulate large numbers of prompt templates, workflow scripts, and domain knowledge — but these skills are scattered across documents, codebases, or personal notes, making them hard to reuse and version.
 
-### 核心痛点与解决方案
+### Core Pain Points & Solutions
 
-| 痛点 | SkillForge 方案 |
-|------|----------------|
-| 队技能分散，新人难以上手 | 统一技能市场，集中管理 |
-| 技能质量参差不齐，无审核机制 | Draft / Stable 双轨发布 + 评估标准 |
-| 外部技能源无法安全引入 | 私有市场 + 第三方仓库发现机制 |
-| 多平台 IDE 技能不互通 | 一次定义，多平台安装 |
-
----
-
-##  核心功能
-
-### 1. 私有技能市场（Private Skill Market）
-
-- 团队/公司部自托管的技能仓库
-- 支持搜索、分类过滤（NLP/分类、信息提取、文本生成、代码本、工作流、视觉/图像等）
-- 按热度排序，快速发现高频技能
-- 技能本地导入，ai自动分析技能元数据，一键提交技能。
-
-### 2. 技能全生命周期管理
-
-- **版本管理**：Draft → Stable 轨发布流程
-- **接口契约**：明确定义 Inputs / Outputs 参数（类型、必填、描述）
-- **运行配置**：Model、Temperature 等运行时参数透明化
-- **限控制**：细粒度权限声明（如 `read:chat`）
-- **质量评估**：内置 Evaluation Criteria，定义技能质量预期
-
-### 3. 多平台技能分发
-
-技能可一键安装到主流 AI 开发平台：
-Claude Code 、Codex 、 Gemini CLI 、Cursor 、Windsurf 、Roo / Trae
-
-### 4. 第三方仓库技能源接入
-
-- **GitHub Repos**：描并索引外部 GitHub 仓库中的技能
-- **skills.sh**：支持脚本化安装源
-- 可以自己安装公司私有的gitlab技能仓库，在设置中配置自动扫描仓库技能
+| Pain Point | SkillForge Solution |
+|------------|---------------------|
+| Team skills are fragmented; newcomers struggle to ramp up | Unified skill marketplace for centralized management |
+| Skill quality varies with no review mechanism | Draft / Stable dual-track release + evaluation criteria |
+| External skill sources cannot be safely imported | Private marketplace + third-party repo discovery |
+| Multi-platform IDE skills are not interoperable | Define once, install on multiple platforms |
 
 ---
 
-## 🏗️ 架构概览
+## Core Features
+
+### 1. Private Skill Market
+
+- Self-hosted skill repository for teams/companies
+- Search and category filtering (NLP/classification, information extraction, text generation, code notebooks, workflows, vision/image, etc.)
+- Sort by popularity to quickly discover frequently-used skills
+- Local skill import: AI automatically analyzes skill metadata and submits skills in one click
+
+### 2. Full Skill Lifecycle Management
+
+- **Versioning**: Draft → Stable release flow
+- **Interface Contract**: Clearly defined Inputs / Outputs parameters (type, required, description)
+- **Runtime Configuration**: Transparent runtime parameters such as Model, Temperature, etc.
+- **Permission Control**: Fine-grained permission declarations (e.g. `read:chat`)
+- **Quality Evaluation**: Built-in Evaluation Criteria to define expected skill quality
+
+### 3. Multi-Platform Skill Distribution
+
+Skills can be installed in one click across mainstream AI development platforms:
+Claude Code, Codex, Gemini CLI, Cursor, Windsurf, Roo / Trae
+
+### 4. Third-Party Repository Skill Source Integration
+
+- **GitHub Repos**: Scan and index skills from external GitHub repositories
+- **skills.sh**: Support for scripted installation sources
+- You can also install your company's private GitLab skill repository and configure automatic repo scanning in settings
+
+---
+
+## 🏗️ Architecture Overview
 
 ```text
 ┌─────────────────────────────────────────────────────────────┐
 │                      SkillForge Server                      │
 │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐      │
-│  │  Skill Market │  │  Skill Detail │  │  Third-Party  │     │
-│  │    技能市场    │  │    技能详情   │  │    Repos     │     │
+│  │  Skill Market│  │  Skill Detail│  │  Third-Party │     │
+│  │              │  │              │  │    Repos     │     │
 │  └──────────────┘  └──────────────┘  └──────────────┘      │
 │         │                                    │              │
 │         ▼                                    ▼              │
 │  ┌──────────────┐                  ┌──────────────┐          │
-│  │  Versioning  │                  │  Repo Manager │        │
-│  │ (Draft/Stable)│                  │(GitHub/.sh)  │        │
+│  │  Versioning  │                  │  Repo Manager│        │
+│  │(Draft/Stable)│                  │(GitHub/.sh)  │        │
 │  └──────────────┘                  └──────────────┘         │
 └─────────────────────────────────────────────────────────────┘
                               │
         ┌──────────────────────────────────────────┐
         ▼                     ▼                     ▼
-   ┌─────────┐          ┌─────────┐          ┌─────────
+   ┌─────────┐          ┌─────────          ┌─────────┐
    │  Claude │          │  Codex  │          │  Gemini │
    │  Code   │          │   CLI   │          │   CLI   │
    └─────────┘          └─────────┘          └─────────┘
@@ -119,33 +119,32 @@ Claude Code 、Codex 、 Gemini CLI 、Cursor 、Windsurf 、Roo / Trae
 
 ---
 
-## 🚀 快速开始
+## 🚀 Quick Start
 
-### 环境要求
+### Requirements
 
 - Docker 20.10+
-- Node.js 18+（如需源码部署）
+- Node.js 18+ (for source deployment)
 
-### Docker 一键部署
+### One-Command Docker Deployment
 
 ```bash
-# 克隆仓库
+# Clone the repository
 git clone https://github.com/your-org/skill-forge.git
 cd skill-forge
 
-# 启动服务
+# Start services
 docker-compose up -d
-
 ```
 
-打开app，登录页面点击左下角服务设置，输入api地址， http://localhost:3456/api
-私有化部署后请输入私有ip地址或者域名
+Open the app, click the service settings button in the bottom-left corner of the login page, and enter the API address: `http://localhost:3456/api`.
+For private deployment, enter your private IP address or domain.
 
 ---
 
-## 🧩 技能定义示例
+## 🧩 Skill Definition Example
 
-每个技能由 `SKILL.md` 定义，包含完整的接口契约：
+Each skill is defined by a `SKILL.md` containing the complete interface contract:
 
 ```yaml
 id: skill-xiaohongshu-copy-001
@@ -153,25 +152,25 @@ name: xiaohongshu-copy
 version: 1.0.0
 runtime: llm_prompt
 visibility: team
-tags: [小红书, 文案生成, 社交媒体]
+tags: [Xiaohongshu, copywriting, social media]
 
 inputs:
   - name: theme_or_product
     type: string
     required: true
-    description: 主题/产品类别（美妆/穿搭/旅行等）
+    description: Theme/product category (beauty, fashion, travel, etc.)
   - name: core_selling_points
     type: string
     required: false
-    description: 核心卖点
+    description: Core selling points
 
 outputs:
   - name: title_suggestions
     type: string
-    description: 封面/标题建议（3个备选）
+    description: Cover/title suggestions (3 alternatives)
   - name: body_text
     type: string
-    description: 正文内容，300-800字
+    description: Body content, 300–800 words
 
 runtime_config:
   model: gpt-4o
@@ -181,32 +180,31 @@ permissions:
   - read:chat
 
 evaluation_criteria:
-  description: 文案是否符合小红书平台调性，语气是否亲切自然...
+  description: Whether the copy matches the Xiaohongshu tone and feels friendly and natural...
 ```
 
 ---
 
-## 🔐 企业级特性
+## 🔐 Enterprise Features
 
-| 特性 | 说明 |
-|------|------|
-| **私有化部署** | 完全内网运行，数据不出域 |
-| **多级可见性** | Private / Team / Organization 分级 |
-| **发布审核** | Draft → Stable 需管理员审批 |
-| **使用审计** | 技能调用日志与统计 |
-| **Action 级管控** | 可禁用高风险操作 |
-| **离线安装包** | 支持导出/导入，适配隔离网络环境 |
+| Feature | Description |
+|---------|-------------|
+| **Private Deployment** | Runs entirely on the internal network; data never leaves the domain |
+| **Multi-Level Visibility** | Private / Team / Organization tiers |
+| **Release Review** | Draft → Stable requires administrator approval |
+| **Usage Audit** | Skill invocation logs and statistics |
+| **Action-Level Control** | High-risk operations can be disabled |
+| **Offline Installer** | Supports export/import for isolated network environments |
 
 ---
 
+## Usage Instructions
 
-## 使用说明
-
-- 第一次登录的用户为管理员账户
-- 第一次使用，需要配置openai 协议的大模型api服务提供地址 和 api key
-- 本地开发, 需要先安装MinIO数据库，重新配置后端服务的环境变量 apps/server/.env，如果数据库服务地址不一致，请更换到本地的地址。
-- 本地开发启动命令
-  ``` bash
+- The first user to log in becomes the administrator account
+- On first use, configure the OpenAI-compatible LLM API service address and API key
+- For local development, install MinIO first, then configure the backend environment variables in `apps/server/.env`; if the database service address differs, update it to your local address
+- Local development startup commands:
+  ```bash
       "dev:desktop": "pnpm --filter @skill-platform/desktop tauri:dev",
       "dev:server": "pnpm --filter @skill-platform/server dev",
   ```
@@ -214,5 +212,3 @@ evaluation_criteria:
 ## 📄 License
 
 [MIT License](./LICENSE)
-
----
