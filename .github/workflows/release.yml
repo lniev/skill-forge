@@ -69,6 +69,7 @@ jobs:
           WINDOWS_CERTIFICATE_PASSWORD: ${{ secrets.WINDOWS_CERTIFICATE_PASSWORD }}
         with:
           projectPath: apps/desktop
+          tauriScript: pnpm tauri
           tagName: ${{ github.event.inputs.tag || github.ref_name }}
           releaseName: 'SkillForge ${{ github.event.inputs.tag || github.ref_name }}'
           releaseBody: 'Download SkillForge for your platform below.'
