@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Geist Sans";
+  src: url("/fonts/Geist-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/fonts/GeistMono-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    /* shadcn/ui 语义变量 */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 98%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 98%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 0 0% 98%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 92%;
+    --input: 0 0% 92%;
+    --ring: 212 100% 48%;
+    --radius: 0.5rem;
+
+    /* Vercel / Geist 设计系统 纯色变量 */
+    --geist-background: #ffffff;
+    --geist-foreground: #171717;
+    --geist-text: #171717;
+    --geist-text-secondary: #4d4d4d;
+    --geist-text-muted: #666666;
+    --geist-border: #ebebeb;
+    --geist-border-shadow: rgba(0, 0, 0, 0.08);
+    --geist-border-shadow-hover: rgba(0, 0, 0, 0.12);
+    --geist-surface: #ffffff;
+    --geist-surface-secondary: #fafafa;
+    --geist-surface-secondary-hover: #f2f2f2;
+    --geist-focus: hsla(212, 100%, 48%, 1);
+    --geist-link: #0072f5;
+    --geist-error: #ff5b4f;
+    --geist-error-bg: #fff5f5;
+    --geist-success: #00c853;
+    --geist-badge-blue-bg: #ebf5ff;
+    --geist-badge-blue-text: #0068d6;
+  }
+
+  .dark {
+    --background: 0 0% 6%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 6%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 64%;
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 212 100% 55%;
+
+    --geist-background: #09090b;
+    --geist-foreground: #fafafa;
+    --geist-text: #fafafa;
+    --geist-text-secondary: #a1a1a1;
+    --geist-text-muted: #737373;
+    --geist-border: #27272a;
+    --geist-border-shadow: rgba(255, 255, 255, 0.08);
+    --geist-border-shadow-hover: rgba(255, 255, 255, 0.12);
+    --geist-surface: #18181b;
+    --geist-surface-secondary: #27272a;
+    --geist-surface-secondary-hover: #3f3f46;
+    --geist-focus: hsla(212, 100%, 55%, 1);
+    --geist-link: #5ba4f5;
+    --geist-error: #ff5b4f;
+    --geist-error-bg: #3f1815;
+    --geist-success: #00c853;
+    --geist-badge-blue-bg: #0f2b4d;
+    --geist-badge-blue-text: #5ba4f5;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    font-feature-settings: "liga" 1, "calt" 1;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Geist Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  code,
+  pre,
+  kbd,
+  .font-mono {
+    font-family: "Geist Mono", ui-monospace, SFMono-Regular, "Roboto Mono", Menlo, Monaco, "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace;
+    font-feature-settings: "liga" 1, "calt" 1, "tnum" 1;
+  }
+}

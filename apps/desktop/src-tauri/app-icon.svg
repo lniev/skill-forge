@@ -1,0 +1,29 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skillGradient" x1="0" y1="0" x2="1024" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="50%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+    <filter id="iconShadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="24" stdDeviation="24" flood-color="#2E1065" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="1024" rx="224" fill="url(#skillGradient)"/>
+
+  <!-- Stylized layered cube representing skills / platform -->
+  <g filter="url(#iconShadow)" stroke="#ffffff" stroke-width="48" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Bottom tier -->
+    <path d="M512 600L256 456v120l256 144 256-144V456L512 600z"/>
+    <!-- Top tier -->
+    <path d="M512 416L256 272v120l256 144 256-144V272L512 416z"/>
+    <!-- Vertical connecting lines -->
+    <path d="M256 392v120"/>
+    <path d="M768 392v120"/>
+    <path d="M512 536v264"/>
+  </g>
+
+  <path d="M512 416L256 272v120l256 144 256-144v-120L512 416z" fill="white" fill-opacity="0.12"/>
+  <path d="M512 600L256 456v120l256 144 256-144V456L512 600z" fill="white" fill-opacity="0.06"/>
+</svg>

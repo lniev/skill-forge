@@ -1,0 +1,7 @@
+{
+  "name": "create-ui-component",
+  "version": "1.0.0",
+  "description": "在 packages/ui 中按文件夹规范创建新的 React 组件",
+  "author": "claude",
+  "source": "local"
+}

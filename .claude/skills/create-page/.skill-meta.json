@@ -1,0 +1,7 @@
+{
+  "name": "create-page",
+  "version": "1.0.0",
+  "description": "在 apps/desktop/src/pages 中按文件夹规范创建新的页面组件",
+  "author": "claude",
+  "source": "local"
+}

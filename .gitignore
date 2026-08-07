@@ -1,0 +1,65 @@
+# 依赖目录
+node_modules/
+.pnp
+.pnp.js
+
+# 构建产物
+dist/
+build/
+out/
+.vite/
+欢迎使用 Skill Platform
+管理、发布和运行你的 AI Skill。从市场中发现新能力，或将你的 Skill 发布到团队。
+已安装 Skill
+0
+我的 Skill
+0
+
+*.tsbuildinfo
+
+# Turbo
+.turbo/
+
+# Tauri / Rust
+target/
+Cargo.lock
+
+# 环境变量
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 操作系统
+.DS_Store
+Thumbs.db
+
+# 日志
+*.log
+logs/
+
+# 测试覆盖率
+coverage/
+
+# Claude / MCP 本地配置
+.claude/settings.local.json
+.mcp.json
+
+# Tauri 生成文件
+**/gen/schemas/
+
+# SQLite 数据库文件
+*.sqlite
+*.sqlite.bak
+apps/server/data/
+
+# 其他的
+*.pem
+*.tmp
+
+docs

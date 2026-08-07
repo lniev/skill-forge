@@ -1,0 +1,7 @@
+{
+  "name": "create-project-element",
+  "version": "1.0.0",
+  "description": "根据项目规范创建 UI 组件或页面，自动分发到对应的子 skill",
+  "author": "claude",
+  "source": "local"
+}
